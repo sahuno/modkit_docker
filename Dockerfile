@@ -18,8 +18,8 @@ RUN apt-get update && \
         ca-certificates && \
     rm -rf /var/lib/apt/lists/*
 
-# Clone and build Modkit
-RUN git clone --depth 1 https://github.com/nanoporetech/modkit.git . && \
+# Clone and build Modkit v0.6.1
+RUN git clone --depth 1 --branch v0.6.1 https://github.com/nanoporetech/modkit.git . && \
     cargo build --release
 
 ##########
