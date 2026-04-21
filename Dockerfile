@@ -4,7 +4,7 @@
 ###########
 # Builder #
 ###########
-FROM rust:1.84.1-slim-bullseye AS builder
+FROM rust:1.84.1-slim-bookworm AS builder
 WORKDIR /build
 # Install build dependencies and clone Modkit
 RUN apt-get update && \
@@ -25,7 +25,7 @@ RUN git clone --depth 1 --branch v0.6.1 https://github.com/nanoporetech/modkit.g
 ##########
 # Final  #
 ##########
-FROM debian:bullseye-slim AS final
+FROM debian:bookworm-slim AS final
 
 WORKDIR /app
 
